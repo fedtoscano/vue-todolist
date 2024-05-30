@@ -17,7 +17,7 @@ createApp({
         },
         {
             text:'Comprare le uova',
-            done: false,
+            done: true,
         },
         {
             text:'Comprare il pane',
