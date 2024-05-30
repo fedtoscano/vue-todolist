@@ -31,7 +31,7 @@
 
                         <div v-show="isModifyOpen === index" id="task-mod-container">
                             <label for="modify-task">Enter the new content for your task</label>
-                            <input type="text" v-model="newTaskContent" @keyup.enter="updateTask(index)">
+                            <input type="text" v-model="modifiedTaskContent" @keyup.enter="updateTask(index)">
                             <button @click="updateTask(index)">update</button>
                         </div>
                         

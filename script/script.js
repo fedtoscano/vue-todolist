@@ -44,12 +44,10 @@ createApp({
                 this.newTaskContent=""
             }
         },
-        updateTask: function(){
+        updateTask: function(index){
             //aggiorna la task corrente
-        },
-        modifyTask: function(index){
-            this.newTaskContent = this.modifiedTaskContent
-            this.todoList[index].text = this.newTaskContent
+            this.todoList[index].text = this.modifiedTaskContent;
+            this.modifiedTaskContent=''
         },
 
         toggleTaskDone: function(index){
