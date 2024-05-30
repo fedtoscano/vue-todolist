@@ -29,7 +29,7 @@
                             <button @click="(this.isModifyOpen===index) ? this.isModifyOpen=null : this.isModifyOpen=index"><i class="fa-solid fa-pen"></i></button>
                         </div>
 
-                        <div v-show="isModifyOpen === index">
+                        <div v-show="isModifyOpen === index" id="task-mod-container">
                             <label for="modify-task">Enter the new content for your task</label>
                             <input type="text" v-model="newTaskContent" @keyup.enter="updateTask(index)">
                             <button @click="updateTask(index)">update</button>
