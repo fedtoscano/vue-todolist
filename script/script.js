@@ -26,5 +26,9 @@ createApp({
     ]
     }
     },
-    methods: {}
+    methods: {
+        removeTask: function(taskIndex){
+            this.todoList.splice(taskIndex, 1)
+        }
+    }
 }).mount('#app')
