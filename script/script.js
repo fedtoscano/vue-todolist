@@ -25,6 +25,7 @@ createApp({
         },
     ],
     newTaskContent: '',
+    isModifyOpen: false,
 
     }
     },
@@ -41,6 +42,14 @@ createApp({
                 this.todoList.push(newTask)
                 this.newTaskContent=""
             }
+        },
+        updateTask: function(){
+            //aggiorna la task corrente
+        },
+        modifyTask: function(){
+            this.isModifyOpen = !this.isModifyOpen;
+
+
         },
         toggleTaskDone: function(index){
             this.todoList[index].done=!this.todoList[index].done;

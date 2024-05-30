@@ -10,10 +10,19 @@
 <body>
     
     <div id="app">
+        
         <ul>
             <li v-for="(item, index) in todoList" :class="(item.done===true) ? 'done' : ''">
                 <span @click="toggleTaskDone(index)">{{item.text}}</span>
                 <button @click=removeTask(index)>X</button>
+                <button @click="modifyTask">modify</button>
+
+                <div id="modify-container" v-show="isModifyOpen">
+                    <label for="modify-task">Enter the new content for your task</label>
+                    <input type="text" v-model="newTaskContent" @keyup.enter="addTask">
+                    <button @click="addTask">add</button>
+                </div>
+                
             </li>
         </ul>
         <div id="input-container">
