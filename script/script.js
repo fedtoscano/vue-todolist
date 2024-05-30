@@ -41,6 +41,9 @@ createApp({
                 this.todoList.push(newTask)
                 this.newTaskContent=""
             }
+        },
+        toggleTaskDone: function(index){
+            this.todoList[index].done=!this.todoList[index].done;
         }
     }
 }).mount('#app')
