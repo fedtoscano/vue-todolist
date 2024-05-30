@@ -5,31 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS-->
     <link rel="stylesheet" href="./style/style.css">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Vue TodoList</title>
 </head>
 <body>
     
     <div id="app">
-        
-        <ul>
-            <li v-for="(item, index) in todoList" :class="(item.done===true) ? 'done' : ''">
-                <span @click="toggleTaskDone(index)">{{item.text}}</span>
-                <button @click=removeTask(index)>X</button>
-                <button @click="modifyTask">modify</button>
+        <header>
+            <div class="header-container">
+                <h2>TO DO LIST</h2>
+                <h3>Organize your day!</h3>
+            </div>
+        </header>
 
+        <main>
+            <ul>
+
+                <li v-for="(item, index) in todoList" :class="(item.done===true) ? 'done' : ''">
+                        <span @click="toggleTaskDone(index)">{{item.text}}</span>
+                        <div class="button-container">
+                            <button @click=removeTask(index)><i class="fa-solid fa-trash"></i></button>
+                            <button @click="(this.isModifyOpen===index) ? this.isModifyOpen=null : this.isModifyOpen=index"><i class="fa-solid fa-pen"></i></button>
+                        </div>
+
+                        <div v-show="isModifyOpen === index">
+                            <label for="modify-task">Enter the new content for your task</label>
+                            <input type="text" v-model="newTaskContent" @keyup.enter="updateTask(index)">
+                            <button @click="updateTask(index)">update</button>
+                        </div>
+                        
+                </li>
+<!--                 
                 <div id="modify-container" v-show="isModifyOpen">
                     <label for="modify-task">Enter the new content for your task</label>
-                    <input type="text" v-model="newTaskContent" @keyup.enter="addTask">
-                    <button @click="addTask">add</button>
-                </div>
-                
-            </li>
-        </ul>
-        <div id="input-container">
-            <label for="new-task">Add the title of your new task</label>
-            <input type="text" v-model="newTaskContent">
-            <button @click="addTask">add</button>
-        </div>
+                    <input type="text" v-model="modifiedTaskContent" @keyup.enter="modifyTask(index)">
+                    <button @click="modifyTask(index)">add</button>
+                </div> -->
+            </ul>
+
+            <div id="input-container">
+                <label for="new-task">Add the title of your new task</label>
+                <input type="text" v-model="newTaskContent">
+                <button @click="addTask">add</button>
+            </div>
+
+        </main>
+        
+
+        <footer>
+            <span>Made with VUE 3 by fedtoscano</span>
+        </footer>
     </div>
 
 

@@ -5,9 +5,44 @@
 }
 
 ul{
-    padding: 4rem;
+    font-size: 1.8em;
 }
-
+ul li{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid blue;
+}
 .done{
     text-decoration: line-through;
+}
+.button-container button{
+    background-color: rgb(144, 221, 240);
+    border: none;
+    padding: 2em;
+}
+
+.input-container{
+    font-size: 1.8em;
+}
+header,
+footer{
+    font-size: 2em;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    background-color: rgb(7, 57, 60);
+}
+
+.header-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+main{
+    padding: 5rem;
+    height: 100vh;
+    background-color: rgb(144, 221, 240);
 }
