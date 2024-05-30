@@ -36,15 +36,9 @@
                         </div>
                         
                 </li>
-<!--                 
-                <div id="modify-container" v-show="isModifyOpen">
-                    <label for="modify-task">Enter the new content for your task</label>
-                    <input type="text" v-model="modifiedTaskContent" @keyup.enter="modifyTask(index)">
-                    <button @click="modifyTask(index)">add</button>
-                </div> -->
             </ul>
 
-            <div id="input-container">
+            <div class="input-container">
                 <label for="new-task">Add the title of your new task</label>
                 <input type="text" v-model="newTaskContent">
                 <button @click="addTask">add</button>
