@@ -23,12 +23,23 @@ createApp({
             text:'Comprare il pane',
             done: false,
         },
-    ]
+    ],
+    newTaskContent: '',
+
     }
     },
     methods: {
         removeTask: function(taskIndex){
             this.todoList.splice(taskIndex, 1)
+        },
+        addTask: function(){
+            const newTask={
+                text: this.newTaskContent,
+                done:false
+            }
+
+            this.todoList.push(newTask)
+            this.newTaskContent=""
         }
     }
 }).mount('#app')

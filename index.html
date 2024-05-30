@@ -16,6 +16,11 @@
                 <button @click=removeTask(index)>X</button>
             </li>
         </ul>
+        <div id="input-container">
+            <label for="new-task">Add the title of your new task</label>
+            <input type="text" v-model="newTaskContent">
+            <button @click="addTask">add</button>
+        </div>
     </div>
 
 
