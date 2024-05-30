@@ -36,7 +36,7 @@ createApp({
             const newTask={
                 text: this.newTaskContent,
                 done:false
-            }
+            };
 
             this.todoList.push(newTask)
             this.newTaskContent=""
