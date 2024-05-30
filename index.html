@@ -10,7 +10,11 @@
 <body>
     
     <div id="app">
-        
+        <ul>
+            <li v-for="(item, index) in todoList">
+                <span>{{item.text}}</span>
+            </li>
+        </ul>
     </div>
 
 
