@@ -33,13 +33,14 @@ createApp({
             this.todoList.splice(taskIndex, 1)
         },
         addTask: function(){
-            const newTask={
-                text: this.newTaskContent,
+            if(this.newTaskContent.trim().length >=1){
+                const newTask={
+                text: this.newTaskContent.trim(),
                 done:false
-            };
-
-            this.todoList.push(newTask)
-            this.newTaskContent=""
+                    };
+                this.todoList.push(newTask)
+                this.newTaskContent=""
+            }
         }
     }
 }).mount('#app')
